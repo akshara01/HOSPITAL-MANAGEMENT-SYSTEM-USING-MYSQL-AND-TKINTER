@@ -228,7 +228,7 @@ class Hospital:
                 messagebox.showerror("Error","All fields are required")
 
             else:
-                conn = mysql.connector.connect(host="localhost",username="root",password="#Sonachandi01",database="hospital")
+                conn = mysql.connector.connect(host="localhost",username="root",password="(YOUR PASSWORD)",database="hospital")
                 my_cursor=conn.cursor()
                 my_cursor.execute("INSERT INTO data values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(
                                                                                                 self.Nameoftablets.get(),
@@ -251,7 +251,7 @@ class Hospital:
                 messagebox.showinfo("Success","Record has been inserted")
     
     def update(self):
-        conn = mysql.connector.connect(host="localhost",username="root",password="#Sonachandi01",database="hospital")
+        conn = mysql.connector.connect(host="localhost",username="root",password="(YOUR PASSWORD)",database="hospital")
         my_cursor=conn.cursor()
         my_cursor.execute("update data set Nameoftablets=%s,Dose=%s,Nooftablets=%s,Lot=%s,IssueDate=%s,ExpiryDate=%s,DailyDose=%s,Storage=%s,NHSNo=%s,PatientName=%s,DOB=%s,Address=%s where ReferenceNo=%s",(
                                                                                                 self.Nameoftablets.get(),                                                                                                
@@ -275,7 +275,7 @@ class Hospital:
         messagebox.showinfo("Success","Record has been updated")
 
     def fetch_data(self):
-        conn = mysql.connector.connect(host="localhost",username="root",password="#Sonachandi01",database="hospital")
+        conn = mysql.connector.connect(host="localhost",username="root",password="(YOUR PASSWORD)",database="hospital")
         my_cursor=conn.cursor()
         my_cursor.execute("select * from data")
         rows=my_cursor.fetchall()
@@ -322,7 +322,7 @@ class Hospital:
         self.txtPrescription.insert(END,"Patient Address:\t\t\t" +self.Address.get()+ "\n")
 
     def idelete(self):
-        conn = mysql.connector.connect(host="localhost",username="root",password="#Sonachandi01",database="hospital")
+        conn = mysql.connector.connect(host="localhost",username="root",password="(YOUR PASSWORD)",database="hospital")
         my_cursor=conn.cursor()
         query ="delete from data where ReferenceNo=%s"
         value=(self.ReferenceNo.get(),)
